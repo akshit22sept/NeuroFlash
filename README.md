@@ -152,14 +152,6 @@ npm run build
 - Check file paths in `backend/samples_config.json`
 - Review backend logs
 
-## Production Deployment
-
-See `PRODUCTION_DEPLOYMENT.md` for:
-- Railway deployment
-- Render deployment
-- Docker containerization
-- Environment configuration
-
 ## Technology Stack
 
 | Component | Technology | Version |
