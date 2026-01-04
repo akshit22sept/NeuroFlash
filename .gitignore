@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node.js / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+coverage/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# AI Models (too large for GitHub)
+Models/*.pth
+Models/*.pt
+*.pth
+*.pt
+
+# Data files (too large for GitHub)
+Data/
+Data2/
+
+# Temporary files
+temp_uploads/
+*.tmp
+*.log
+
+# Test results and outputs
+backend_test_result.json
+inference/results/
+pages/*.html
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Backend specific
+backend/__pycache__/
+backend/*.pyc
+backend/temp_uploads/
+
+# Frontend specific
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Misc
+*.bak
+*.swp
+cleanup_for_github.py

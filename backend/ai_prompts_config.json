@@ -1,0 +1,39 @@
+{
+    "ai_prompts": {
+        "stroke_analysis": {
+            "system_prompt": "You are a medical AI assistant specializing in brain stroke analysis. Provide clear, professional, and clinically relevant explanations.",
+            "stroke_detected": "You are analyzing a brain FLAIR MRI scan that shows ischemic stroke.\n\nFindings:\n- Stroke volume: {volume_cm3:.2f} cm³ ({percentage:.2f}% of brain)\n- Severity: {severity}\n\nProvide a professional clinical assessment in 2-3 sentences covering:\n1. Clinical significance of the findings\n2. Recommended medical actions\n\nBe clear, concise, and medically accurate.",
+            "no_stroke_detected": "You are analyzing a brain FLAIR MRI scan.\n\nFindings:\n- No detectable ischemic stroke lesions identified\n- Brain tissue appears normal\n\nProvide a brief professional assessment in 2-3 sentences about:\n1. What the normal scan indicates\n2. Any recommendations for continued monitoring\n\nBe clear and professional.",
+            "minimal_stroke": "You are analyzing a brain scan showing a very small stroke lesion.\n\nFindings:\n- Stroke volume: {volume_cm3:.2f} cm³ ({percentage:.2f}% of brain)\n- Classification: Minimal/Small acute infarct\n\nProvide a 2-3 sentence assessment focusing on:\n1. The limited extent and its clinical implications\n2. Importance of correlating with patient symptoms\n3. Follow-up recommendations",
+            "moderate_stroke": "You are analyzing a brain scan showing a moderate stroke.\n\nFindings:\n- Stroke volume: {volume_cm3:.2f} cm³ ({percentage:.2f}% of brain)\n- Classification: Moderate ischemic stroke\n\nProvide a 2-3 sentence assessment covering:\n1. The clinical significance of this extent\n2. Urgency of intervention needed\n3. Expected management approach",
+            "severe_stroke": "You are analyzing a brain scan showing a large stroke.\n\nFindings:\n- Stroke volume: {volume_cm3:.2f} cm³ ({percentage:.2f}% of brain)\n- Classification: Large/Severe ischemic stroke\n\nProvide a 2-3 sentence assessment emphasizing:\n1. The serious nature of these findings\n2. Critical need for immediate intervention\n3. Comprehensive care requirements"
+        },
+        "fallback_responses": {
+            "no_stroke": "This FLAIR MRI scan shows no detectable ischemic stroke lesions. The brain appears normal with no significant hyperintense regions. Continue routine monitoring as clinically indicated.",
+            "minimal": "This scan reveals a small ischemic stroke lesion ({volume_cm3:.2f} cm³, {percentage:.2f}% of brain volume). The limited extent suggests an acute infarct. Immediate clinical correlation with patient symptoms is recommended, along with follow-up imaging to assess progression.",
+            "moderate": "This scan shows a moderate ischemic stroke ({volume_cm3:.2f} cm³, {percentage:.2f}% of brain volume). This extent requires immediate medical attention and intervention. Close monitoring and appropriate treatment protocols should be initiated.",
+            "severe": "This scan demonstrates a large ischemic stroke ({volume_cm3:.2f} cm³, {percentage:.2f}% of brain volume). This is a significant finding requiring urgent neurological intervention. Immediate comprehensive stroke management is essential."
+        }
+    },
+    "model_config": {
+        "ollama": {
+            "model_name": "gemma",
+            "temperature": 0.7,
+            "max_tokens": 150,
+            "top_p": 0.9
+        }
+    },
+    "severity_thresholds": {
+        "brain_percentage": {
+            "minimal": 0.1,
+            "low": 0.5,
+            "moderate": 1.5,
+            "high": 100.0
+        },
+        "volume_ml": {
+            "minimal": 10,
+            "moderate": 50,
+            "severe": 100
+        }
+    }
+}

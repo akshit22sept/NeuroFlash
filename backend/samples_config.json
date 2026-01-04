@@ -1,0 +1,42 @@
+{
+  "data_directory": "../Data2",
+  "models": {
+    "unet_stroke": {
+      "path": "../Models/model_epoch_55.pt",
+      "type": "stroke",
+      "description": "UNet3D model for stroke detection on FLAIR MRI"
+    }
+  },
+  "samples": [
+    {
+      "id": "stroke_5",
+      "filename": "(5).nii",
+      "name": "Stroke Case 5",
+      "description": "FLAIR MRI: Small ischemic stroke (0.17% brain volume)",
+      "type": "stroke",
+      "severity": "low",
+      "model": "unet_stroke",
+      "enabled": true
+    },
+    {
+      "id": "stroke_9",
+      "filename": "(9).nii",
+      "name": "Stroke Case 9",
+      "description": "FLAIR MRI: Small ischemic stroke (0.08% brain volume)",
+      "type": "stroke",
+      "severity": "low",
+      "model": "unet_stroke",
+      "enabled": true
+    },
+    {
+      "id": "stroke_3",
+      "filename": "(3).nii",
+      "name": "Stroke Case 3",
+      "description": "FLAIR MRI: Clean scan (no stroke detected)",
+      "type": "negative",
+      "severity": "none",
+      "model": "unet_stroke",
+      "enabled": true
+    }
+  ]
+}

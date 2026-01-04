@@ -1,0 +1,18 @@
+REMAINING TASKS
+
+1. [CRITICAL] Verify Backend Paths:
+   - Check `backend/main.py` and `backend/utils.py` for absolute or relative paths to `Data` and `Models`.
+   - Update paths to reflect the new structure (e.g., `../Data` or `./Data` if running from `inference`).
+
+2. [CRITICAL] Verify Frontend API URL:
+   - Ensure frontend `API_URL` (currently `http://localhost:8000`) is still accessible and the backend runs on the correct port from the new location.
+
+3. Testing:
+   - Run backend from `inference` folder.
+   - Run frontend from `inference/frontend`.
+   - Perform end-to-end test with NIfTI upload.
+
+4. Features to Complete:
+   - Finalize Patient Records page.
+   - Implement "Research Lab" experimental features.
+   - Add export functionality for diagnostic reports.
